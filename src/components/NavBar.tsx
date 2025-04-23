@@ -20,20 +20,21 @@ const NavBar = () => {
         <div className="flex items-center gap-2">
           <Link 
             to="/" 
-            className="font-bold text-xl text-primary"
+            className="font-bold text-xl"
           >
-            <span className="text-[#9b87f5]">Знаком</span>
-            <span className="text-[#7E69AB]">ства</span>
+            <span className="text-[#E98BB0]">Знаком</span>
+            <span className="text-pink-dark">ства</span>
           </Link>
           
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link to="/">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                {/* Исправленный код - убрано вложение a в a */}
+                <NavigationMenuLink asChild>
+                  <Link to="/" className={navigationMenuTriggerStyle()}>
                     Главная
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Поиск</NavigationMenuTrigger>
@@ -41,9 +42,9 @@ const NavBar = () => {
                   <ul className="grid w-[300px] gap-3 p-4">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
-                        <a
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-[#9b87f5]/20 to-[#7E69AB]/50 p-6 no-underline outline-none focus:shadow-md"
-                          href="#"
+                        <Link
+                          to="#"
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-pink-metallic/20 to-pink-dark/50 p-6 no-underline outline-none focus:shadow-md"
                         >
                           <div className="mb-2 mt-4 text-lg font-medium">
                             Найти друзей
@@ -51,40 +52,44 @@ const NavBar = () => {
                           <p className="text-sm leading-tight text-muted-foreground">
                             Расширьте свой круг общения
                           </p>
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
-                      <Link
-                        to="#"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">По интересам</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Найдите людей с общими увлечениями
-                        </p>
-                      </Link>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="#"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">По интересам</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Найдите людей с общими увлечениями
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
                     </li>
                     <li>
-                      <Link
-                        to="#"
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">По городу</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Познакомьтесь с людьми из вашего города
-                        </p>
-                      </Link>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          to="#"
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">По городу</div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                            Познакомьтесь с людьми из вашего города
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
                     </li>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="#">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                <NavigationMenuLink asChild>
+                  <Link to="#" className={navigationMenuTriggerStyle()}>
                     Сообщества
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -99,10 +104,10 @@ const NavBar = () => {
           </div>
           <div className="relative rounded-full w-8 h-8 flex items-center justify-center bg-slate-100 hover:bg-slate-200 cursor-pointer">
             <Bell size={18} className="text-slate-600" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#9b87f5] text-white text-xs flex items-center justify-center rounded-full">3</span>
+            <span className="absolute -top-1 -right-1 w-4 h-4 bg-pink-metallic text-white text-xs flex items-center justify-center rounded-full">3</span>
           </div>
           
-          <Button className="rounded-full bg-[#9b87f5] hover:bg-[#7E69AB]">
+          <Button className="rounded-full bg-pink-metallic hover:bg-pink-dark">
             <User size={18} className="mr-2" /> Профиль
           </Button>
         </div>

@@ -62,10 +62,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				purple: {
-					light: '#9b87f5',
-					DEFAULT: '#7E69AB',
-					dark: '#6E59A5',
+				pink: {
+					light: '#f9c0d7',
+					metallic: '#E98BB0',
+					DEFAULT: '#D946EF',
+					dark: '#B43CC2',
+					darkest: '#932BB8'
 				}
 			},
 			borderRadius: {
@@ -99,12 +101,21 @@ export default {
 						opacity: '1', 
 						transform: 'translateY(0)' 
 					}
+				},
+				'shimmer': {
+					'0%': { 
+						backgroundPosition: '200% 0' 
+					},
+					'100%': { 
+						backgroundPosition: '-200% 0' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.5s ease-out'
+				'fade-in': 'fade-in 0.5s ease-out',
+				'shimmer': 'shimmer 8s ease-in-out infinite'
 			}
 		}
 	},
